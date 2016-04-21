@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.0" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+	<persistence-unit name="MCateringCod" transaction-type="RESOURCE_LOCAL">
+		
+
+		<class>Modelodediseño.Negocio.Departamento.Departamento</class>
+		
+		<class>Modelodediseño.Negocio.Empleado.Empleado</class>
+		<class>Modelodediseño.Negocio.Empleado.EmpleadoRepartidor</class>
+		<class>Modelodediseño.Negocio.Empleado.EmpleadoComercial</class>
+
+		<class>Modelodediseño.Negocio.Evento.Evento</class>
+		<class>Modelodediseño.Negocio.Evento.EmpleadosPorEvento</class>
+		<class>Modelodediseño.Negocio.Evento.EmpleadoPorEventoId</class>
+
+		<validation-mode>NONE</validation-mode>
+
+		<properties>
+		
+			<property name="eclipselink.cache.shared.default" value="false"/>
+			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+
+			
+			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://sql4.freemysqlhosting.net:3306/sql4103906" />
+			<property name="javax.persistence.jdbc.user" value="sql4103906" />
+			<property name="javax.persistence.jdbc.password" value="j5h4j3McFE" />
+			 
+			<!-- 
+			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost/bdCatering" />
+			<property name="javax.persistence.jdbc.user" value="root" />
+			<property name="javax.persistence.jdbc.password" value="1234" />
+			-->
+			
+			<!-- EclipseLink should create the database schema automatically -->
+			
+			<!--  
+      		<property name="eclipselink.ddl-generation" value="drop-and-create-tables" />
+      		<property name="eclipselink.create-ddl-jdbc-file-name" value="createDDL_dllGeneration.jdbc" />
+      		<property name="eclipselink.drop-ddl-jdbc-file-name" value="dropDDL_dllGeneration.jdbc" />
+      		<property name="eclipselink.ddl-generation.output-mode" value="both" />
+			--> 
+			 
+		</properties>
+		
+	</persistence-unit>
+
+</persistence>
