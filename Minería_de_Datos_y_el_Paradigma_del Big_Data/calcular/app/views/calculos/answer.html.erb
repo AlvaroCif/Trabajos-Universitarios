@@ -1,0 +1,12 @@
+<p> Has tardado <%= @calculo.medicion %> segundos</p>
+<p> El tiempo estimado es de <%= @calculo.estimate %> segundos</p>
+
+<% if @calculo.estimate.to_f>@calculo.medicion %> 
+	<div class="one"><b>Enhorabuena chaval!</b></div><br/>
+<% else %>
+	<div class="two">Advice: respira hondo. En tu <ins>interior</ins> hallarás la respuesta...</div><br/>
+<% end %>
+
+<td><%= link_to 'Siguiente operacion', "new" %></td>
+
+

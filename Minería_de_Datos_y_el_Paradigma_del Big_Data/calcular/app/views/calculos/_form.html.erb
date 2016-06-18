@@ -1,0 +1,37 @@
+<%= form_for(@calculo) do |f| %>
+  <% if @calculo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@calculo.errors.count, "error") %> prohibited this calculo from being saved:</h2>
+
+      <ul>
+      <% @calculo.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :op1 %><br>
+    <%= f.text_field :op1 %>
+  </div>
+  <div class="field">
+    <%= f.label :op2 %><br>
+    <%= f.text_field :op2 %>
+  </div>
+  <div class="field">
+    <%= f.label :operador %><br>
+    <%= f.text_field :operando %>
+  </div>
+  <div class="field">
+    <%= f.label :t0 %><br>
+    <%= f.text_field :t0 %>
+  </div>
+  <div class="field">
+    <%= f.label :t1 %><br>
+    <%= f.text_field :t1 %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

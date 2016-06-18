@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  op1: 
+  op2: 
+  operando: 
+  t0: 
+  t1: 
+
+two:
+  op1: 
+  op2: 
+  operando: 
+  t0: 
+  t1: 

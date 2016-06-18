@@ -1,0 +1,14 @@
+<h1>Calcúlalo si puedes...</h1>
+
+<%= form_tag({:controller => "calculos", :action => "answer"}, :method => "post") do %>
+	<%= @calculo.op1%> <%=@calculo.operador%> <%=@calculo.op2  %>
+	<br />
+	<%= text_field_tag "resultado","" %>
+	<br />
+	
+	<%= hidden_field_tag "id", @calculo.id %>
+	<br />
+	<%= submit_tag "Responder" %>
+<% end %>
+
+
