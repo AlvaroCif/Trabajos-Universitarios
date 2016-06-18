@@ -1,0 +1,1 @@
+Se agrupan todas las practicas divididas cada una en un directorio, cada uno de los directorios cuenta con un documento generalmente en pdf con el enunciado de la práctica, y junto a los ficheros necesarios para llevar a cabo su implementación.
