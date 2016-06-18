@@ -1,0 +1,36 @@
+Se trata de hacer un program en MiniZinc capaz de resolver nonogramas.
+Un nonograma, tambi�n llamado Hanjie, es un puzzle lógico en el que se tiene:
+
+- Una cuadrícula de mxn casillas, en principio todas en blanco.Se trata de marcar algunas de las 
+   casillas ("pintarlas de negro") para encontrar un dibujo que cumpla unas reglas.
+- A los lados, de las filas y las columnas unos n�meros que representan
+  el tamaño de los bloques (casillas continuas negras) que debe haber en la fila/columna. 
+  Dos bloques siempre deben estar separados por al menos una casilla en blanco.
+
+
+  Por ejemplo si en una fila tenemos escrito 3 2 5 significa que la fila consta de 3 bloques:
+  - El primero tiene 3 casillas consecutivas negras
+  - A continuación habrá una cantidad mayor o igual a uno de casillas blancas.
+  - El segundo bloque tiene 2 casillas consecutivas negras.
+  - A continuación habrá una cantidad mayor o igual a uno de casillas blancas.
+  - El tercer bloque tiene 5 casillas consecutivas negras.
+
+Obsérvese que el primer bloque no tiene que ir necesariamente precedido por blancos, ni el último necesariamente seguido por blancos.
+
+En el programa MiniZinc se debe partir de un fichero de entrada con el tamaño de la rejilla y los datos de filas y columnas, como el siguiente:
+
+n=5;
+m=5;
+int:nb = n div 2+1;
+int:mb = m div 2+1;
+
+% bloques de negros para las filas y columnas ocupadas
+array[1..n, 1..nb] of int:f;
+array[1..m, 1..mb] of int:c;
+
+
+f = [|3,0,0 | 4,0,0 |1,1,0 |2,0,0 |2,0,0 |];
+c = [|3,0,0 | 2,0,0 |2,0,0 |1,2,0 |3,0,0 |];
+
+
+Las cantidades nb y mb indican el número máximo de bloques que puede tener una fila y una columna.

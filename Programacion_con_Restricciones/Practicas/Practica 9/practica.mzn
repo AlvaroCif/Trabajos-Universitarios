@@ -1,0 +1,16 @@
+include "lstrings.mzn";
+int:n=3;
+int:m=6;
+array [1..n] of var CHAR:a;
+array [1..n] of var CHAR:c;
+array [1..m] of var CHAR:b;
+var int:p;
+var int:q;
+constraint reverse(a,c);
+constraint p=2;
+constraint a[1]=2 /\ a[2]=3;
+constraint q=p+2;
+constraint substring(a,p,b) /\ substring(c,q,b);
+constraint count(a,2,3);
+solve satisfy;
+output(["a: \(a)  p: \(p)  b: \(b)"]);

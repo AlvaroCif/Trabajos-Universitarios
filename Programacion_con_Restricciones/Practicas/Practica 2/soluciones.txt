@@ -1,0 +1,51 @@
+Programación con restricciones - práctica 2
+
+#Nombre1: Jaime Boixadós
+#Nombre2: Benito Álvaro Cifuentes de la Torre
+#Nombre3:
+
+#Observaciones:
+
+#P1 Modelo:
+
+%variables
+var bool: a; var bool: b; var bool: c; var bool: d; var bool: e; var bool: f; var bool: g; var bool: h;
+
+% restricciones
+constraint a!=b; constraint a!=d; constraint a!=e; 
+constraint b!=f; constraint b!=c; 
+constraint c != g; constraint c!= d;
+constraint d != h;
+constraint e!=f; constraint e != h; 
+constraint f != g;
+constraint  g!= h;
+
+% resolver
+solve satisfy;
+
+output ["a=", show(a), "\t b=", show(b), "\t c=", show(c), "\n",
+"d=", show(d), "\t e=", show(e), "\t f=", show(f), "\t g=", show(g), "\t h=", show(h), "\n"];
+
+#P2 constraint completa:
+
+int: min = -2;
+int: max = 2;
+
+var min..max: x;  var min..max: y; var min..max: z; var min..max: m;
+
+constraint ((x < y) /\ (y<z) /\ (m=z)) \/ 
+	   ((x < y) /\ not(y<z) /\ (m=y)) \/
+	   (not(x<y) /\ (x<z) /\ m=z) \/
+	   (not(x<y) /\ not(x<z) /\ m=x);
+ 
+solve satisfy;
+
+#P3.1 ¿Hay soluciones?(S/N): N
+#P3.2 Explicación (una frase): 
+La nueva restricción impide que m tome todos los valores posibles que genera el algoritmo.
+
+
+#P4 Restricción adicional:
+constraint (a > 0) /\ (a=x) /\ (b=y) /\ (z = 100) /\ (u = m) \/
+	   not(a>0) /\ (a*a= x) /\ (b=y) /\ (b*b=z) /\ (u= m+1);
+

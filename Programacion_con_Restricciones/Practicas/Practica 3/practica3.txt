@@ -1,0 +1,45 @@
+Programación con restricciones - práctica 3
+
+#Nombre1: Jaime Boixadós
+#Nombre2: Benito Alvaro Cifuentes
+#Nombre3:
+
+#Observaciones:
+
+#P1 Declaración del array t:
+array[1..N, 1..D] of par 0..MaxH: trabajadores;
+
+#P2 Declaración del array horasPersona:	
+array[1..N] of var 0..D*MaxH: horasPersonas;
+
+#P3 Restricción:
+constraint forall(i in 1..N)(horasPersonas[i] = 
+sum(d in 1..D)(trabajadores[i,d]));
+
+#P4 Declaración del array horasDia:
+array[1..D] of var 0..N*MaxH: horasDia;	
+
+#P5 Restricción:
+constraint forall(i in 1..D)(horasDia[i] = 
+sum(d in 1..N)(trabajadores[d,i]));
+
+#P6 Restricción:
+constraint forall(i in 1..N)(exists(d in 1..D) (trabajadores[i,d] = 0));
+
+#P7 Restricción:
+constraint forall(i in 1..N) (horasPersonas[i] >=  MaxH*(D-3));
+
+#P8 Restricción:
+constraint forall(i in 1..N) (forall(d in 1..D-1) ((trabajadores[i,d] < MaxH) \/ 
+(trabajadores[i,d] = MaxH /\ trabajadores[i,d+1] < MaxH))); 
+
+#P9 Restricción:
+constraint sum(i in 1..N) (horasPersonas[i]) >= HorasTarea;
+
+#P10 a) Declaración de variable nueva (si la hay): var 1..7: dias;
+#P10 b) Restricción nueva (si la hay):
+	%constraint forall(i in 1..D)((i<=dias /\ horasDia[i]!=0)\/(i>dias /\ horasDia[i]=0)) 
+	constraint exists(i in 1..D) (horasDia[i] = 0 /\ 
+        not(exists(d in 1..i-1) (horasDia[d] = 0)) /\ forall(d in i+1..D) (horasDia[d] = 0)  /\ i-1 = dias);
+#P10 c) Nuevo objetivo solve (si hay cambiado): solve minimize dias;
+

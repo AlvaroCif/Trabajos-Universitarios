@@ -1,0 +1,46 @@
+Práctica 13
+
+Miembros del grupo:
+Benito Álvaro Cifuentes.
+Yaofang Zhang.
+
+Pregunta 1:
+- ¿Qué significa la respuesta al objetivo A*A #= 625.? (una frase debe bastar)
+
+	Es una restricción aritmética que implica que A multiplicado por si mismo sera igual a 625 (-25 o 25).
+
+Pregunta 2:
+- ¿Cuántas respuestas tiene el objetivo g(X,6)?
+	Para la primera regla no tiene respuesta ya que es insatisfactible.
+	Para la segunda X=7
+	Para la tercera X in 8..12
+- ¿Qué regla de f se ha usado para obtener la primera respuesta?
+	La primera f(X) :- X in 1..3. (pulsar ; para las siguientes).
+Pregunta 3:
+- ¿Qué devuelve g(4,5),? 
+	false
+- ¿Por qué?
+	En primer lugar porque no existe ninguna regla f(x) que incluya el valor 4 en el dominio de x.
+	En segundo lugar la consulta g(4,5) establece el dominio de las variables y 4 es menor que 5.
+Pregunta 4:
+ - ¿Cuántas respuestas diferentes tiene el objetivo 
+trio([Pto,Y,Z],Pto).
+donde Pto debe sustituirse por el número de puesto actual?
+	Tiene una única respuesta. 
+¿Qué parte de la definición de "trio" hace que falle 
+   el objetivo trio([50,Y,50],50).?
+    (Una frase)
+	Que tiene una restricción alldifferent y 50 es igual a 50.
+Pregunta 5 Predicado para cuadrados mágicos de 3x3:
+
+magico([A,B,C,D,E,F,G,H,I] ) :- [A,B,C,D,E,F,G,H,I] ins 1..9,
+				A + B + C #= 15,
+				D + E + F #= 15,
+				G + H + I #= 15,
+				A + D + G #= 15,
+				B + E + H #= 15,
+				C + F + I #= 15,
+				all_different([A,B,C,D,E,F,G,H,I]), label([A,B,C,D,E,F,G,H,I]).
+   
+
+
