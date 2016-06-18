@@ -1,3 +1,5 @@
+# Programación con Restricciones.
+
 Repositorio que contiene todas las practicas realizadas para la asignatura Programacion con Restricciones, asignatura optativa del itinerario de Ingeniería del Software.
 
 En esta asignatura se resuelven problemas que mediante metodologías de programación clásicas, como la orientada a objetos, resulta realmente complicado implementar una solución, además de tender a alcanzar costes exponenciales. Para solucionar este problema, se hace uso de este tipo de programación mediante el lenguaje de MiniZinc, en ellas se resuelven problemas clásicos como las nueve reinas, el cuadrado mágico o tareas tan cotidianas como crear un horario de turnos de trabajo que se adapte a ciertas condiciones.
